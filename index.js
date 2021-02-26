@@ -2,7 +2,7 @@ const express = require('express');
 const scraper = require('./scraper'); 
 var app = express();
 const path = require('path')
-const port = 3000; 
+var port = process.env.PORT || 3000; 
 
 app.use(express.json());
 
@@ -46,5 +46,5 @@ app.post('/reviews', async function (req, res) {
 })
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Example app listening at ${port}`)
 }); 
